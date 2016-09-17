@@ -1,0 +1,16 @@
+.login-wrapper {
+  background-color: #34495e;
+  width: 100vw;
+  height: 100vh;
+}
+
+.login-container {
+  color: #ecf0f1;
+  text-align: center;
+  height: 300px;
+  width: 300px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}

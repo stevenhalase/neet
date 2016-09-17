@@ -1,0 +1,48 @@
+ui-view {
+  position: fixed;
+  left: 45px;
+}
+
+.form-group input {
+  border-radius: 0px;
+}
+
+.btn {
+  border-radius: 0px;
+}
+
+.side-nav {
+  z-index: 5;
+  position: fixed;
+  height: 100vh;
+  width: 45px;
+  background-color: #ecf0f1;
+  -webkit-transition: width .5s ease-in-out;
+  -moz-transition: width .5s ease-in-out;
+  -o-transition: width .5s ease-in-out;
+  transition: width .5s ease-in-out;
+}
+
+.nav-open {
+  width: 100vw;
+  -webkit-transition: width .5s ease-in-out;
+  -moz-transition: width .5s ease-in-out;
+  -o-transition: width .5s ease-in-out;
+  transition: width .5s ease-in-out;
+}
+
+.navbar-toggle {
+  display: inline-block;
+  margin-right: 0px;
+}
+
+.icon-bar {
+  z-index: 6;
+  background-color: #34495e;
+}
+
+@media (min-width: 768px) {
+  .navbar-toggle {
+    display: inline-block;
+  }
+}

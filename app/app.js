@@ -23,13 +23,26 @@ function neetRouter($stateProvider, $urlRouterProvider) {
 
 app.controller('indexCtrl', indexController);
 
-indexController.$inject = [];
+indexController.$inject = ['UserFactory', '$rootScope', '$state'];
 
-function indexController() {
+function indexController(UserFactory, $rootScope, $state) {
   const iCtrl = this;
   iCtrl.title = 'index';
 
+  iCtrl.user = UserFactory.user;
+
   iCtrl.navOpen = false;
+  iCtrl.currentState = $state.current.name;
+
+  $rootScope.$on('$stateChangeStart',
+  function(event, toState, toParams, fromState, fromParams){
+    console.log(toState)
+      iCtrl.currentState = toState.name;
+  })
+
+  iCtrl.goTo = function() {
+
+  }
 
   iCtrl.openNav = function() {
     if (iCtrl.navOpen) {

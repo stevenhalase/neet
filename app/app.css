@@ -1,16 +1,18 @@
-ui-view {
+/* GLOBALS */
+.content-container {
   position: fixed;
   left: 45px;
 }
 
 .form-group input {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 .btn {
-  border-radius: 0px;
+  border-radius: 0;
 }
 
+/* SIDE-NAV */
 .side-nav {
   z-index: 5;
   position: fixed;
@@ -33,12 +35,39 @@ ui-view {
 
 .navbar-toggle {
   display: inline-block;
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .icon-bar {
   z-index: 6;
   background-color: #34495e;
+}
+
+/* HEADER */
+.header {
+  height: 50px;
+  background-color: #F7F7F7;
+  border-bottom: 1px solid #cacaca;
+}
+
+.header>div {
+  height: 50px;
+}
+
+.header-current-page {
+  margin: 0;
+  line-height: 50px;
+  display: inline-block;
+}
+
+.header-user-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 @media (min-width: 768px) {

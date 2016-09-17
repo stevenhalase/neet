@@ -1,1 +1,24 @@
-{{hCtrl.title}}
+<div class="home-wrapper">
+  <div id="map"></div>
+  <div class="container-fluid">
+    <div class="activity-header row text-center">
+      <div class="col-xs-12">
+        <p class="header-current-page">Activities</p>
+      </div>
+    </div>
+    <div class="activity-list row">
+      <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in hCtrl.activities">
+        <div class="activity-info">
+          <a href="" ng-click="hCtrl.selectActivity(activity)">
+            <img class="activity-user-img" ng-src="{{activity.user.img}}">
+            <p class="activity-title">{{activity.title}}</p>
+            <p class="pull-right">{{ActivityFactory.distance(hCtrl.user.location.lat, hCtrl.user.location.lng, activity.location.lat, activity.location.lng, 'M')}}</p>
+          </a>
+        </div>
+        <div class="activity-contact">
+          <button class="activity-contact-button btn btn-primary">Ask for info</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

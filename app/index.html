@@ -8,9 +8,14 @@
     <script src=".\components\angular-ui-router\release\angular-ui-router.min.js" charset="utf-8"></script>
     <script src=".\components\bootstrap\dist\js\bootstrap.min.js" charset="utf-8"></script>
 
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBP0Y05aTE38c63krstp5R0c2QuSAEEBl8" charset="utf-8"></script>
+    <script src="gmaps.min.js" charset="utf-8"></script>
+
     <link rel="stylesheet" href=".\components\bootstrap\dist\css\bootstrap.min.css">
 
     <script src="app.js" charset="utf-8"></script>
+    <script src="./factories/user-factory.js" charset="utf-8"></script>
+    <script src="./factories/activity-factory.js" charset="utf-8"></script>
     <script src="./login/login-controller.js" charset="utf-8"></script>
     <script src="./home/home-controller.js" charset="utf-8"></script>
     <link rel="stylesheet" href="app.css">
@@ -25,6 +30,16 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-    <ui-view></ui-view>
+    <div class="content-container">
+      <div class="container-fluid">
+        <div class="header row">
+          <div class="col-xs-12">
+            <a href="" ng-click="iCtrl.goTo()"><span class="glyphicon glyphicon-chevron-left"></span><p class="header-current-page">{{iCtrl.currentState.toUpperCase()}}</p></a>
+            <img class="header-user-img" ng-src="{{iCtrl.user.img}}" alt="" />
+          </div>
+        </div>
+      </div>
+      <ui-view></ui-view>
+    </div>
   </body>
 </html>

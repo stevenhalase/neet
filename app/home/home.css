@@ -1,0 +1,52 @@
+.home-wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
+#map {
+  height: 200px;
+}
+
+.activity-header {
+  height: 25px;
+  background-color: #F7F7F7;
+  border-top: 1px solid #cacaca;
+  border-bottom: 1px solid #cacaca;
+}
+
+.activity-header p {
+  line-height: 25px;
+}
+
+.activity {
+  height: 70px;
+  overflow: hidden;
+  -webkit-transition: height .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out;
+  -o-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+}
+
+.activity--open {
+  height: 150px;
+  -webkit-transition: height .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out;
+  -o-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+}
+
+.activity-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.activity-user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.activity-title {
+  margin-left: 10px;
+  display: inline-block;
+}

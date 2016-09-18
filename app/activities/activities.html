@@ -1,0 +1,22 @@
+<div class="activities-wrapper">
+  <div id="map"></div>
+  <div class="container-fluid">
+    <div class="activites-container">
+      <div class="activities-header row text-center">
+        <p>Activities</p>
+      </div>
+      <div class="activity-list row">
+        <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in aCtrl.activities">
+          <div class="activity-info" ng-click="aCtrl.selectActivity(activity)">
+              <img class="activity-user-img" ng-src="{{activity.user.img}}">
+              <p class="activity-title">{{activity.title}}</p>
+              <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
+          </div>
+          <div class="activity-contact">
+            <button class="activity-contact-button btn btn-primary btn-full">Ask for info</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,7 +7,7 @@ function ActivityFactory() {
     id: 1,
     user: {
       name: 'Steve',
-      img: './images/user1.jpeg'
+      img: './images/user1.jpg'
     },
     title: 'BBQ @ Park',
     date: new Date(Date.now()),
@@ -21,7 +21,7 @@ function ActivityFactory() {
     id: 2,
     user: {
       name: 'Joe',
-      img: './images/user2.jpeg'
+      img: './images/user2.jpg'
     },
     title: 'Party @ House',
     date: new Date(Date.now()),
@@ -34,7 +34,6 @@ function ActivityFactory() {
   }]
 
   function distance(lat1, lon1, lat2, lon2, unit) {
-    console.log('params', lat1, lon1, lat2, lon2, unit)
   	let radlat1 = Math.PI * lat1/180
   	let radlat2 = Math.PI * lat2/180
   	let theta = lon1-lon2
@@ -47,19 +46,6 @@ function ActivityFactory() {
   	if (unit=="N") { dist = dist * 0.8684 }
   	return dist
   }
-
-  // for (var i = 0; i < activities.length; i++) {
-  //   let activity = activities[i];
-  //   GMaps.geocode({
-  //     address: activity.location.address,
-  //     callback: function(results, status) {
-  //       if (status == 'OK') {
-  //         activity.location.lat = results[0].geometry.location.lat();
-  //         activity.location.lng = results[0].geometry.location.lng();
-  //       }
-  //     }
-  //   });
-  // }
 
   return {
     activities: activities,

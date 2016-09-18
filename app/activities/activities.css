@@ -1,5 +1,5 @@
-.home-wrapper {
-  width: 100vw;
+.activities-wrapper {
+  width: 100%;
   height: 100vh;
 }
 
@@ -7,20 +7,22 @@
   height: 200px;
 }
 
-.activity-header {
+.activities-header {
   height: 25px;
   background-color: #F7F7F7;
   border-top: 1px solid #cacaca;
   border-bottom: 1px solid #cacaca;
 }
 
-.activity-header p {
+.activities-header p {
   line-height: 25px;
 }
 
 .activity {
+  text-align: center;
   height: 70px;
   overflow: hidden;
+  border-bottom: 1px solid #ddd;
   -webkit-transition: height .3s ease-in-out;
   -moz-transition: height .3s ease-in-out;
   -o-transition: height .3s ease-in-out;
@@ -38,6 +40,7 @@
 .activity-info {
   margin-top: 10px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .activity-user-img {
@@ -50,3 +53,13 @@
   margin-left: 10px;
   display: inline-block;
 }
+
+.activity-distance {
+  display: inline-block;
+  color: #bbb;
+  font-size: 12px;
+}
+
+/*.activity-contact-button {
+  background-color: #34495e;
+}*/

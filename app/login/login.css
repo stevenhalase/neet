@@ -14,3 +14,17 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
+
+.login-logo {
+  width: 300px;
+}
+
+.login-button {
+  background-color: white;
+  color: #34495e;
+}
+
+.login-button:hover {
+  background-color: #ecf0f1;
+  color: #435f7a;
+}

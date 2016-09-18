@@ -12,10 +12,10 @@ function neetRouter($stateProvider, $urlRouterProvider) {
       templateUrl: './login/login.html',
       controller: 'loginCtrl as lCtrl'
     })
-    .state('home', {
-      url: '/home',
-      templateUrl: './home/home.html',
-      controller: 'homeCtrl as hCtrl'
+    .state('activities', {
+      url: '/activities',
+      templateUrl: './activities/activities.html',
+      controller: 'activitiesCtrl as aCtrl'
     })
 
     $urlRouterProvider.otherwise('/');
@@ -23,9 +23,9 @@ function neetRouter($stateProvider, $urlRouterProvider) {
 
 app.controller('indexCtrl', indexController);
 
-indexController.$inject = ['UserFactory', '$rootScope', '$state'];
+indexController.$inject = ['UserFactory', '$rootScope', '$scope', '$state'];
 
-function indexController(UserFactory, $rootScope, $state) {
+function indexController(UserFactory, $rootScope, $scope, $state) {
   const iCtrl = this;
   iCtrl.title = 'index';
 
@@ -44,6 +44,15 @@ function indexController(UserFactory, $rootScope, $state) {
 
   }
 
+  iCtrl.login = function() {
+    $state.go('activities')
+  }
+
+  iCtrl.logout = function() {
+    $state.go('login')
+    iCtrl.navOpen = false;
+  }
+
   iCtrl.openNav = function() {
     if (iCtrl.navOpen) {
       iCtrl.navOpen = false;
@@ -51,4 +60,15 @@ function indexController(UserFactory, $rootScope, $state) {
       iCtrl.navOpen = true;
     }
   }
+
+  $(document).ready(() => {
+    $('html').click(function(event){
+      console.log(event.target.className)
+      if (event.target.className == 'side-nav-backer ng-scope side-nav-backer--open') {
+        console.log('backer', iCtrl.navOpen)
+        iCtrl.navOpen = false;
+        $scope.$apply();
+      }
+    });
+  })
 }

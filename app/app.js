@@ -12,6 +12,11 @@ function neetRouter($stateProvider, $urlRouterProvider) {
       templateUrl: './login/login.html',
       controller: 'loginCtrl as lCtrl'
     })
+    .state('dashboard', {
+      url: '/dashboard',
+      templateUrl: './dashboard/dashboard.html',
+      controller: 'dashboardCtrl as dCtrl'
+    })
     .state('activities', {
       url: '/activities',
       templateUrl: './activities/activities.html',
@@ -33,15 +38,18 @@ function indexController(UserFactory, $rootScope, $scope, $state) {
 
   iCtrl.navOpen = false;
   iCtrl.currentState = $state.current.name;
+  iCtrl.previousState = '';
 
   $rootScope.$on('$stateChangeStart',
   function(event, toState, toParams, fromState, fromParams){
     console.log(toState)
       iCtrl.currentState = toState.name;
+      iCtrl.previousState = fromState.name;
   })
 
-  iCtrl.goTo = function() {
-
+  iCtrl.goTo = function(location) {
+    $state.go(location);
+    iCtrl.navOpen = false;
   }
 
   iCtrl.login = function() {

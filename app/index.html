@@ -16,11 +16,14 @@
     <script src="app.js" charset="utf-8"></script>
     <script src="./factories/user-factory.js" charset="utf-8"></script>
     <script src="./factories/activity-factory.js" charset="utf-8"></script>
+    <script src="./dashboard/dashboard-controller.js" charset="utf-8"></script>
     <script src="./login/login-controller.js" charset="utf-8"></script>
     <script src="./activities/activities-controller.js" charset="utf-8"></script>
+
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="./login/login.css">
     <link rel="stylesheet" href="./activities/activities.css">
+    <link rel="stylesheet" href="./dashboard/dashboard.css">
   </head>
   <body ng-controller="indexCtrl as iCtrl">
     <div class="side-nav" ng-class="{'nav-open': iCtrl.navOpen}" ng-if="iCtrl.currentState !== 'login'">
@@ -30,13 +33,13 @@
         <span class="icon-bar"></span>
       </button>
       <div class="nav-list" ng-class="{'nav-list--open': iCtrl.navOpen}">
-        <div class="nav-item" ng-class="{'nav-item--active': iCtrl.currentState == 'dashboard'}">
+        <div class="nav-item" ng-click="iCtrl.goTo('dashboard')" ng-class="{'nav-item--active': iCtrl.currentState == 'dashboard'}">
           <p>Dashboard</p>
         </div>
-        <div class="nav-item" ng-class="{'nav-item--active': iCtrl.currentState == 'messaging'}">
+        <div class="nav-item" ng-click="iCtrl.goTo('messaging')" ng-class="{'nav-item--active': iCtrl.currentState == 'messaging'}">
           <p>Messaging</p>
         </div>
-        <div class="nav-item" ng-class="{'nav-item--active': iCtrl.currentState == 'activities'}">
+        <div class="nav-item" ng-click="iCtrl.goTo('activities')" ng-class="{'nav-item--active': iCtrl.currentState == 'activities'}">
           <p>Activities</p>
         </div>
         <div class="nav-item" ng-click="iCtrl.logout()">
@@ -49,7 +52,7 @@
       <div class="container-fluid">
         <div class="header row" ng-if="iCtrl.currentState !== 'login'">
           <div class="col-xs-12">
-            <a href="" ng-click="iCtrl.goTo()"><span class="glyphicon glyphicon-chevron-left"></span><p class="header-current-page">{{iCtrl.currentState.toUpperCase()}}</p></a>
+            <a href="" ng-click="iCtrl.goTo(iCtrl.previousState)"><span ng-if="iCtrl.currentState != 'dashboard' " class="glyphicon glyphicon-chevron-left"></span><p class="header-current-page">{{iCtrl.currentState.toUpperCase()}}</p></a>
             <img class="header-user-img" ng-src="{{iCtrl.user.img}}" alt="" />
           </div>
         </div>

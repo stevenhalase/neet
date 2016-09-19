@@ -4,5 +4,8 @@
 }
 
 .news-container {
-  height: 300px;
+}
+
+.news-img {
+    width: 100%;
 }

@@ -26,6 +26,11 @@ function activitiesController(UserFactory, ActivityFactory, $scope) {
     }
   }
 
+  aCtrl.askForInvite = function(activity) {
+      UserFactory.addRequestedActivity(UserFactory.user, activity);
+      console.log('returned: ', aCtrl.user)
+  }
+
   aCtrl.getDistance = function(activity) {
     // console.log(ActivityFactory.distance(aCtrl.user.location.lat, aCtrl.user.location.lng, activity.location.lat, activity.location.lng, 'M').toFixed(2))
     let distance = ActivityFactory.distance(aCtrl.user.location.lat, aCtrl.user.location.lng, activity.location.lat, activity.location.lng, 'M').toFixed(2);

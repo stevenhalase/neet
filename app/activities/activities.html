@@ -13,7 +13,11 @@
               <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
           </div>
           <div class="activity-contact">
-            <button class="activity-contact-button btn btn-primary btn-full">Ask for info</button>
+            <button class="activity-contact-button btn btn-primary btn-full"
+                ng-click="aCtrl.askForInvite(activity)"
+                ng-if="!aCtrl.user.activitiesRequested.includes(activity)">Ask for info</button>
+            <button class="activity-contact-button btn btn-success btn-full"
+                ng-if="aCtrl.user.activitiesRequested.includes(activity)">Info requested</button>
           </div>
         </div>
       </div>

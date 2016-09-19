@@ -1,5 +1,39 @@
 <div class="dashboard-wrapper">
   <div class="news-container">
-    <img ng-src="">
+    <img class="news-img" ng-src="{{dCtrl.news.img}}">
   </div>
+
+    <div class="container-fluid">
+        <div class="activities-header row text-center">
+          <p>Pending Requests</p>
+        </div>
+        <div class="activity-list row">
+          <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in dCtrl.user.activitiesRequested">
+            <div class="activity-info" ng-click="dCtrl.selectActivity(activity)">
+                <img class="activity-user-img" ng-src="{{activity.user.img}}">
+                <p class="activity-title">{{activity.title}}</p>
+                <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
+            </div>
+            <div class="activity-contact">
+              <button class="activity-contact-button btn btn-default btn-full disabled">Waiting for response</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="activities-header row text-center">
+          <p>Your Activites</p>
+        </div>
+        <div class="activity-list row">
+          <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in dCtrl.user.activites">
+            <div class="activity-info" ng-click="dCtrl.selectActivity(activity)">
+                <img class="activity-user-img" ng-src="{{activity.user.img}}">
+                <p class="activity-title">{{activity.title}}</p>
+                <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
+            </div>
+            <div class="activity-contact">
+              <button class="activity-contact-button btn btn-default btn-full disabled">Waiting for response</button>
+            </div>
+          </div>
+        </div>
+    </div>
 </div>

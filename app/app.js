@@ -71,9 +71,9 @@ function indexController(UserFactory, $rootScope, $scope, $state) {
 
   $(document).ready(() => {
     $('html').click(function(event){
-      console.log(event.target.className)
+    //   console.log(event.target.className)
       if (event.target.className == 'side-nav-backer ng-scope side-nav-backer--open') {
-        console.log('backer', iCtrl.navOpen)
+        // console.log('backer', iCtrl.navOpen)
         iCtrl.navOpen = false;
         $scope.$apply();
       }

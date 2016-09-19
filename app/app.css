@@ -143,6 +143,50 @@
   border-radius: 50%;
 }
 
+/* Activities */
+.activity {
+  text-align: center;
+  height: 70px;
+  overflow: hidden;
+  border-bottom: 1px solid #ddd;
+  -webkit-transition: height .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out;
+  -o-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+}
+
+.activity--open {
+  height: 150px;
+  -webkit-transition: height .3s ease-in-out;
+  -moz-transition: height .3s ease-in-out;
+  -o-transition: height .3s ease-in-out;
+  transition: height .3s ease-in-out;
+}
+
+.activity-info {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.activity-user-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.activity-title {
+  margin-left: 10px;
+  display: inline-block;
+}
+
+.activity-distance {
+  display: inline-block;
+  color: #bbb;
+  font-size: 12px;
+}
+
+
 @media (min-width: 768px) {
   .navbar-toggle {
     display: inline-block;

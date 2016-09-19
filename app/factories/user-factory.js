@@ -9,10 +9,29 @@ function UserFactory() {
     location: {
       lat: 43.003192,
       lng: -87.944141
-    }
+    },
+    activitiesRequested: [],
+    activities: []
+  }
+
+  function updateUser(user, info) {
+      for (prop in user) {
+          if (info[prop]) {
+              console.log('found', info[prop])
+              user[prop] = info[prop];
+          }
+      }
+      console.log(user)
+  }
+
+  function addRequestedActivity(user, activity) {
+      user.activitiesRequested.push(activity);
+      console.log('in factory: ', user)
   }
 
   return {
-    user: user
+    user: user,
+    updateUser : updateUser,
+    addRequestedActivity : addRequestedActivity
   }
 }

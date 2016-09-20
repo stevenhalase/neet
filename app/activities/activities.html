@@ -16,7 +16,7 @@
             <button class="activity-contact-button btn btn-primary btn-full"
                 ng-click="aCtrl.askForInvite(activity)"
                 ng-if="!aCtrl.user.activitiesRequested.includes(activity)">Ask for info</button>
-            <button class="activity-contact-button btn btn-success btn-full"
+            <button class="activity-contact-button btn btn-success btn-full disabled"
                 ng-if="aCtrl.user.activitiesRequested.includes(activity)">Info requested</button>
           </div>
         </div>

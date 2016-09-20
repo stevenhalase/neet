@@ -71,7 +71,6 @@ function activitiesController(UserFactory, ActivityFactory, $scope) {
           },
           click: (e) => {
             aCtrl.selectActivity(activity);
-            $scope.$apply();
           }
         });
 

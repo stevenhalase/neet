@@ -4,6 +4,30 @@
   </div>
 
     <div class="container-fluid">
+
+        <div class="new-activity" ng-class="{'new-activity--open': dCtrl.openNewActivity}">
+          <button class="activity-post-button btn btn-primary btn-full" ng-click="dCtrl.openNewActivity = !dCtrl.openNewActivity">Post an activity</button>
+          <form class="new-activity-form">
+            <div class="form-group">
+              <input type="text" class="form-control" id="newActivityTitle" placeholder="Title" ng-model="dCtrl.newActivity.title">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="newActivityAddress" placeholder="Address" ng-model="dCtrl.newActivity.location.address">
+            </div>
+            <br>
+            <div class="form-group">
+              <input type="datetime-local" class="form-control" id="newActivityDate" placeholder="Date" ng-model="dCtrl.newActivity.date">
+            </div>
+            <br>
+            <button class="btn btn-primary btn-full"
+                ng-click="dCtrl.submitNewActivity()"
+                ng-if="!dCtrl.newActivitySubmitted">Submit Activity</button>
+            <button class="btn btn-success btn-full disabled"
+                ng-if="dCtrl.newActivitySubmitted">Success</button>
+          </form>
+
+        </div>
+
         <div class="activities-header row text-center">
           <p>Pending Requests</p>
         </div>
@@ -12,7 +36,7 @@
             <div class="activity-info" ng-click="dCtrl.selectActivity(activity)">
                 <img class="activity-user-img" ng-src="{{activity.user.img}}">
                 <p class="activity-title">{{activity.title}}</p>
-                <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
+                <p class="activity-distance">{{dCtrl.getDistance(activity)}} mi</p>
             </div>
             <div class="activity-contact">
               <button class="activity-contact-button btn btn-default btn-full disabled">Waiting for response</button>
@@ -24,14 +48,22 @@
           <p>Your Activites</p>
         </div>
         <div class="activity-list row">
-          <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in dCtrl.user.activites">
+          <div id="{{activity.id}}" class="activity col-xs-12" ng-repeat="activity in dCtrl.user.activities">
             <div class="activity-info" ng-click="dCtrl.selectActivity(activity)">
+              <div>
                 <img class="activity-user-img" ng-src="{{activity.user.img}}">
                 <p class="activity-title">{{activity.title}}</p>
-                <p class="activity-distance">{{aCtrl.getDistance(activity)}} mi</p>
+                <p class="activity-distance">{{dCtrl.getDistance(activity)}} mi</p>
+              </div>
+              <div class="activity-geo-info">
+                <p class="activity-address">{{activity.location.address}}</p>
+                <p class="activity-date">3 hrs</p>
+              </div>
+
+
             </div>
             <div class="activity-contact">
-              <button class="activity-contact-button btn btn-default btn-full disabled">Waiting for response</button>
+              <button class="activity-contact-button btn btn-primary btn-full">Contact {{activity.user.name}}</button>
             </div>
           </div>
         </div>

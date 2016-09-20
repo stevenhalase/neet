@@ -9,3 +9,50 @@
 .news-img {
     width: 100%;
 }
+
+.activity-list {
+  min-height: 70px;
+  background-color: white;
+}
+
+.activity-geo-info {
+  margin-top: 10px;
+}
+
+.activity-post-button {
+  margin: 10px 0px;
+  height: 50px;
+}
+
+.new-activity {
+  height: 70px;
+  overflow: hidden;
+  -webkit-transition: height .5s ease-in-out;
+  -moz-transition: height .5s ease-in-out;
+  -o-transition: height .5s ease-in-out;
+  transition: height .5s ease-in-out;
+}
+
+.new-activity--open {
+  height: 235px;
+  -webkit-transition: height .5s ease-in-out;
+  -moz-transition: height .5s ease-in-out;
+  -o-transition: height .5s ease-in-out;
+  transition: height .5s ease-in-out;
+}
+
+.new-activity-form {
+  text-align: center;
+}
+
+.new-activity-form .form-group{
+  display: inline-block;
+}
+
+.new-activity-form .form-control {
+  display: inline-block;
+}
+
+.new-activity-form button {
+  margin: 10px 0px;
+}

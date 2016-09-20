@@ -10,7 +10,7 @@ function ActivityFactory() {
       img: './images/user1.jpg'
     },
     title: 'BBQ @ Park',
-    date: new Date(Date.now()),
+    date: Date.parse('22 September 2016'),
     location: {
       address: '2123 S Muskego Ave Milwaukee, WI 53215',
       lat: 43.006211,
@@ -24,7 +24,7 @@ function ActivityFactory() {
       img: './images/user2.jpg'
     },
     title: 'Party @ House',
-    date: new Date(Date.now()),
+    date: new Date(),
     location: {
       address: '2304 S 20th St Milwaukee, WI 53215',
       lat: 43.00279219999999,

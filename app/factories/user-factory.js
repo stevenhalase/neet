@@ -4,12 +4,14 @@ UserFactory.$inject = [];
 
 function UserFactory() {
   let user = {
+    id: 1,
     name: 'Steve',
     img: './images/profile.jpg',
     location: {
       lat: 43.003192,
       lng: -87.944141
     },
+    hostedActivities : [],
     activitiesRequested: [],
     activities: []
   }
@@ -29,9 +31,15 @@ function UserFactory() {
       console.log('in factory: ', user)
   }
 
+  function addHostedActivity(user, activity) {
+      user.hostedActivities.push(activity);
+      console.log('in factory: ', user)
+  }
+
   return {
     user: user,
     updateUser : updateUser,
-    addRequestedActivity : addRequestedActivity
+    addRequestedActivity : addRequestedActivity,
+    addHostedActivity : addHostedActivity
   }
 }

@@ -148,6 +148,7 @@
   text-align: center;
   height: 70px;
   overflow: hidden;
+  background-color: white;
   border-bottom: 1px solid #ddd;
   -webkit-transition: height .3s ease-in-out;
   -moz-transition: height .3s ease-in-out;
@@ -184,6 +185,14 @@
   display: inline-block;
   color: #bbb;
   font-size: 12px;
+}
+
+.activity-address {
+  display: inline-block;
+}
+
+.activity-date {
+  display: inline-block;
 }
 
 
